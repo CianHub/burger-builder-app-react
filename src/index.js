@@ -11,7 +11,11 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
-import { watchAuth } from "./store/sagas/index";
+import {
+  watchAuth,
+  watchBurgerBuilder,
+  watchOrders
+} from "./store/sagas/index";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -31,6 +35,8 @@ const store = createStore(
 );
 
 sagaMiddleware.run(watchAuth);
+sagaMiddleware.run(watchBurgerBuilder);
+sagaMiddleware.run(watchOrders);
 
 const app = (
   <Provider store={store}>

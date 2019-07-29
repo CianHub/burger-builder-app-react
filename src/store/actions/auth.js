@@ -1,5 +1,4 @@
 import * as actions from "../actions/actions";
-import axios from "axios";
 
 export const authStart = () => {
   return {
@@ -50,23 +49,5 @@ export const auth = (email, password, isSignUp) => {
 };
 
 export const authCheckState = () => {
-  return dispatch => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      dispatch(logout());
-    } else {
-      const expirationDate = new Date(localStorage.getItem("expirationDate"));
-      if (expirationDate <= new Date()) {
-        dispatch(logout());
-      } else {
-        const userId = localStorage.getItem("userId");
-        dispatch(authSuccess(token, userId));
-        dispatch(
-          checkAuthTimeout(
-            (expirationDate.getTime() - new Date().getTime()) / 1000
-          )
-        );
-      }
-    }
-  };
+  return { type: actions.AUTH_CHECK_LOGIN };
 };
