@@ -1,5 +1,4 @@
 import * as actions from "./actions";
-import { instance } from "../../axios-orders";
 
 export const addIngredient = ingredientName => {
   return {
@@ -29,14 +28,5 @@ export const fetchIngredientsFailed = () => {
 };
 
 export const initIngredients = ingredients => {
-  return dispatch => {
-    return instance
-      .get("/ingredients.json")
-      .then(response => {
-        dispatch(setIngredients(response.data));
-      })
-      .catch(error => {
-        dispatch(fetchIngredientsFailed());
-      });
-  };
+  return { type: actions.BURGER_INIT_INGREDIENTS };
 };
