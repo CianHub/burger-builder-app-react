@@ -1,5 +1,4 @@
 import * as actions from "./actions";
-import { instance } from "../../axios-orders";
 
 export const purchaseBurgerSuccess = (orderId, orderData) => {
   return {
