@@ -21,3 +21,5 @@ export const AUTH_FAIL = "AUTH_FAIL";
 export const LOGOUT = "LOGOUT";
 
 export const SET_AUTH_REDIRECT = "SET_AUTH_REDIRECT";
+
+export const AUTH_INIT_LOGOUT = "AUTH_INIT_LOGOUT";

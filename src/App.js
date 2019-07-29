@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import Layout from "./hoc/Layout/Layout";
 import BurgerBuilder from "./containers/burger-builder/burger-builder";
-import Checkout from "./containers/Checkout/checkout";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import Orders from "./containers/Orders/Orders";
-import Authentication from "./containers/auth/auth";
 import Logout from "./containers/auth/logout";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
