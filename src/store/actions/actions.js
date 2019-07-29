@@ -23,3 +23,5 @@ export const LOGOUT = "LOGOUT";
 export const SET_AUTH_REDIRECT = "SET_AUTH_REDIRECT";
 
 export const AUTH_INIT_LOGOUT = "AUTH_INIT_LOGOUT";
+export const AUTH_CHECK_TIMEOUT = "AUTH_CHECK_TIMEOUT";
+export const AUTH_LOGIN = "AUTH_LOGIN";
